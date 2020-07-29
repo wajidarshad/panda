@@ -1,5 +1,5 @@
 # PANDA
-To predict change in protein binding affinity
+To predict change in protein binding affinity upon mutations using sequences
 
 # Dependencies
 1-Python 
