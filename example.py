@@ -13,4 +13,11 @@ Receptor_M='DEVLGDVQVYPARGTVAFGSGLHGWAFTIRQFAYADEVLGDVQVYPARGTVAFGSGLHGWAFTIRQFA
 
 affinity_change=predict_affinity(ligand_WT,Receptor_WT,ligand_M,Receptor_M)
 
-print ("The predicted Change in binding affinity is:", affinity_change[0])
+print ("The predicted Change in binding affinity is:"+str(affinity_change[0])+" kcal/mol")
+
+if affinity_change[0]<0:
+    print("Decreasing affinity")
+elif affinity_change[0]>0:
+    print("increasing affinity")
+else:
+    print("No Change in affinity!")
