@@ -25,7 +25,7 @@ def count_full_mers(seq,mers):
 def k_mers_features_prot_level(seq,k):#Simply Compute Amino Acid Composition
     feature=count_full_mers(seq,k).values()
     #feature=feature/np.linalg.norm(feature)
-    return feature
+    return list(feature)
 #********************************
 #Code to normalize features
 def mean_varrianace_normalization_single(examples):
@@ -41,11 +41,10 @@ def mean_varrianace_normalization_single(examples):
     
 
 def predict_affinity(WT_seq1,WT_seq2,M_seq1,M_seq2):
-    feats_1=k_mers_features_prot_level(WT_seq1,2)#get_features_proPy_list_Full_des(seq1,request)
-    feats_2=k_mers_features_prot_level(WT_seq2,2)#get_features_proPy_list_Full_des(seq2,request)
-    feats_3=k_mers_features_prot_level(M_seq1,2)#get_features_proPy_list_Full_des(seq1,request)
-    feats_4=k_mers_features_prot_level(M_seq2,2)#get_features_proPy_list_Full_des(seq2,request)
-
+    feats_1=k_mers_features_prot_level(WT_seq1,2)
+    feats_2=k_mers_features_prot_level(WT_seq2,2)
+    feats_3=k_mers_features_prot_level(M_seq1,2)
+    feats_4=k_mers_features_prot_level(M_seq2,2)
     feats_WT=np.concatenate((feats_1,feats_2), axis=0)
     feats_M=np.concatenate((feats_3,feats_4), axis=0)
     final_feats=feats_WT-feats_M
