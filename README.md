@@ -7,4 +7,4 @@ To predict change in protein binding affinity upon mutations using sequences
 3-sklearn 0.20
 
 # Usage
-Please see and run example.py
+Please see and run example.py (For its webserver please visit https://pandaaffinity.pythonanywhere.com/welcome/default/index#)
